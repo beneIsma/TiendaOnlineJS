@@ -1,0 +1,65 @@
+@import "../lib/css/bootstrap.css";
+@import "./icons/bootstrap-icons.min.css";
+@import "fonts.css";
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p:hover {
+    color: black;
+}
+
+#container {
+    width: 100%;
+    height: 100dvh;
+}
+
+#container > .content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container > .content > form {
+    width: 95%;
+    max-width: 450px;
+    height: auto;
+    display: none;
+}
+
+#container > .content > form.active {
+    display: block;
+}
+
+form .show-password {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+form .show-password i {
+    color: #8e8e8e;
+}
+
+form .steps {
+    display: none;
+}
+
+form .steps.active {
+    display: block;
+}

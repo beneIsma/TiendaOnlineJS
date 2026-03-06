@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+
+    <!--
+     title
+     meta:title
+     meta:description
+     meta:keywords
+     meta:image
+
+     meta:url
+     meta:author
+    -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+    <!-- JS -->
+    <script src="./assets/lib/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/change-auth-form.js"></script>
+
+</head>
+<body>
+
+
+<div id="container">
+    <div class="content">
+
+<!--        <button type="button" class="btn btn-primary" onclick="ProbandoRegex()">Probando regex</button>-->
+
+        <form class="active py-4 px-3 bg-white border border-light-subtle rounded-3 login-form" method="post">
+            <h1 class="h4 m-auto mb-3 text-center">Iniciar sesión</h1>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="loginEmail" value="camilo@gmail.com" placeholder="...@example.com">
+                <label for="loginEmail">Correo electrónico</label>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+
+            <div class="form-floating mb-5 position-relative">
+                <input type="password" class="form-control password" id="loginPassword" placeholder="*******">
+                <label for="loginPassword">Contraseña</label>
+                <div class="show-password" onclick="TogglePassword(this)">
+                    <i class="bi bi-eye-fill fs-5"></i>
+                </div>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+            <div class="mb-5">
+                <button type="submit" class="btn btn-primary btn d-block w-100">Entrar</button>
+            </div>
+
+            <hr class="d-block w-75 m-auto mb-5">
+
+            <div>
+                <button type="button" data-camilo="1" class="btn btn-outline-dark d-block m-auto change-form">
+                    Registrarme ahora
+                </button>
+            </div>
+        </form>
+
+        <form class="py-4 px-3 bg-white border border-light-subtle rounded-3 register-form" method="post">
+            <h1 class="h4 m-auto mb-3 text-center">Registrarme</h1>
+
+            <div class="steps active">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="registerEmail" placeholder="...@example.com">
+                    <label for="registerEmail">Correo electrónico</label>
+                    <div class="invalid-feedback">
+                        Este campo es obligatorio.
+                    </div>
+                </div>
+                <div class="form-floating mb-3 position-relative">
+                    <input type="password" class="form-control password" id="registerPassword" placeholder="*******">
+                    <label for="registerPassword">Contraseña</label>
+                    <div class="show-password" onclick="TogglePassword(this)">
+                        <i class="bi bi-eye-fill fs-5"></i>
+                    </div>
+                    <div class="invalid-feedback">
+                        Este campo es obligatorio.
+                    </div>
+                </div>
+                <div class="form-floating mb-3 position-relative">
+                    <input type="password" class="form-control password" id="registerRepeatPassword" placeholder="*******">
+                    <label for="registerRepeatPassword">Repetir contraseña</label>
+                    <div class="show-password" onclick="TogglePassword(this)">
+                        <i class="bi bi-eye-fill fs-5"></i>
+                    </div>
+                    <div class="invalid-feedback">
+                        Este campo es obligatorio.
+                    </div>
+                </div>
+                <div class="form-floating mb-3 position-relative">
+                    <input type="text" class="form-control" id="registerFirstName" placeholder="Nombre">
+                    <label for="registerFirstName">Nombre</label>
+                    <div class="invalid-feedback">
+                        Este campo es obligatorio.
+                    </div>
+                </div>
+                <div class="form-floating mb-5 position-relative">
+                    <input type="text" class="form-control" id="registerLastName" placeholder="Apellidos">
+                    <label for="registerLastName">Apellidos</label>
+                    <div class="invalid-feedback">
+                        Este campo es obligatorio.
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <button type="button" class="btn btn-outline-danger d-block w-100 btn-steps" data-type-step="next">Siguiente</button>
+                </div>
+            </div>
+
+
+            <div class="steps">
+                <div class="form-floating mb-3 position-relative">
+                    <input type="text" class="form-control" id="registerAddress" placeholder="Dirección">
+                    <label for="registerAddress">Dirección</label>
+                    <div class="invalid-feedback">
+                        Este campo es obligatorio.
+                    </div>
+                </div>
+                <div class="form-floating mb-3 position-relative">
+                    <input type="text" class="form-control" id="registerPhone" placeholder="123456789">
+                    <label for="registerPhone">Teléfono (Opcional)</label>
+                    <div class="invalid-feedback">
+                        Este campo es obligatorio.
+                    </div>
+                </div>
+                <div class="mb-3 position-relative">
+                    <label class="form-label" for="registerEdad">Edad</label>
+                    <select class="form-select" id="registerEdad" data-name="Edad">
+                        <option selected>Seleccione la edad</option>
+                        <option value="1">1</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Este campo es obligatorio.
+                    </div>
+                </div>
+                <div class="mb-3 position-relative">
+                    <label class="form-label" for="registerCity">Ciudad</label>
+                    <select class="form-select" id="registerCity" data-name="Ciudad">
+                        <option selected>Seleccione la ciudad</option>
+                        <option value="">Madrid</option>
+                        <option value="">Barcelona</option>
+                        <option value="">Valencia</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Este campo es obligatorio.
+                    </div>
+                </div>
+                <div class="mb-3 position-relative">
+                    <label class="form-label" for="registerPais">País</label>
+                    <select class="form-select" id="registerPais" data-name="País">
+                        <option selected>Seleccione el país</option>
+                        <option value="ES">España</option>
+                        <option value="FR">Francia</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Este campo es obligatorio.
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <button type="button" class="btn btn-outline-danger d-block mb-3 w-100 btn-steps" data-type-step="back">Atrás</button>
+                    <button type="submit" class="btn btn-primary d-block w-100">Finalizar registro</button>
+                </div>
+            </div>
+
+            <hr class="d-block w-75 m-auto mb-5">
+
+            <div>
+                <button type="button" data-camilo="2" class="btn btn-outline-dark d-block m-auto change-form">
+                    Iniciar sesión
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="notificaciones"
+     tabindex="-1" role="dialog" aria-labelledby="notificaciones" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Notificaciones</h5>
+                <button type="button"
+                        onclick="cerrarModal('notificaciones')"
+                        class="btn btn-outline-dark close"
+                        style="margin: 0 0 0 auto"
+                        data-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ol id="items" class="list-group list-group-numbered"></ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="cerrarModal('notificaciones')" class="btn btn-primary w-100">Cerrar notificación</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="assets/js/modal-bootstrap.js"></script>
+<script src="./assets/js/login.js"></script>
+<script src="./assets/js/toggle-password.js"></script>
+<script src="./assets/js/registro.js"></script>
+
+</body>
+</html>
